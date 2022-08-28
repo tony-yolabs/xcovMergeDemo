@@ -1,0 +1,68 @@
+require "fileutils"
+
+DERIVED_DATA_PATH = './derived_data'.freeze
+XCOV_OUTPUT_PATH = './fastlane/xcov_output'.freeze
+XCOV_MERGED_PATH = 'xcov_output'.freeze
+XCOV_TEMP_LOG_PATH = '/xcov_temp_logs'.freeze
+TEST_SCHEMES = ['FizzTests', 'PrimeTests', 'EvenTests'].freeze
+
+default_platform(:ios)
+
+platform :ios do
+  lane :do_tests do |options|
+    TEST_SCHEMES.each do |test_scheme|
+      prebuild(test_scheme)
+      test_with_prebuild(test_scheme)
+    end
+
+    merge_results
+  end
+
+  def merge_results
+    temp_log_parent = Dir.pwd
+    temp_log_path = File.join(temp_log_parent, XCOV_TEMP_LOG_PATH)
+    xcresults = Dir.glob(File.join(temp_log_path, '*.xcresult'))
+    xcresult_list = xcresults.join(' ')
+    unless xcresults
+      puts 'no results'
+      return
+    end
+
+    merged_report = File.join(XCOV_MERGED_PATH, 'merged.xcresult')
+    cmd_line = "xcrun xcresulttool merge #{xcresult_list} --output-path #{merged_report}" 
+    puts "Running: sh #{cmd_line}"
+    sh cmd_line
+  end
+
+  def prebuild(scheme)
+    scan(
+       workspace: "mtest.xcworkspace",
+       scheme: scheme,
+       devices: ["iPhone 11"],
+       code_coverage: true,
+       clean: true,
+       derived_data_path: DERIVED_DATA_PATH,
+       build_for_testing: true
+    )    
+  end
+
+  def test_with_prebuild(scheme)
+    scan(
+       workspace: "mtest.xcworkspace",
+       scheme: scheme,
+       devices: ["iPhone 11"],
+       code_coverage: true,
+       derived_data_path: DERIVED_DATA_PATH,
+       output_directory: XCOV_OUTPUT_PATH,
+       test_without_building: true
+    )
+
+    xcresult_path = Actions.lane_context[SharedValues::SCAN_GENERATED_XCRESULT_PATH]
+    xcresult_parent = File.dirname(xcresult_path)
+    xcresults = Dir.glob(File.join(xcresult_parent, '*.xcresult'))
+    temp_log_path = File.join(Dir.pwd, XCOV_TEMP_LOG_PATH)  
+
+    FileUtils.mkdir_p(temp_log_path)
+    FileUtils.cp_r(xcresults, temp_log_path)
+  end
+end
