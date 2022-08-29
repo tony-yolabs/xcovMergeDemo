@@ -1,7 +1,0 @@
-version: "Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)"
-options: "da1164ce02083bd3198824e7cb202fe5250a5ba930c384ba8b48e49f0e85eaec"
-build_start_time: [1661810738, 614914894]
-build_end_time: [1661810738, 784237861]
-inputs:
-  "/Users/tony/tmp/mtest/mtestUITests/mtestUITests.swift": [1661722739, 360421895]
-  "/Users/tony/tmp/mtest/mtestUITests/mtestUITestsLaunchTests.swift": [1661722739, 342526912]
