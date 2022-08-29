@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='mtestTests.xctest' tests='4' failures='0'>
+  <testsuite name='mtestTests.EvenTests' tests='4' failures='0'>
+    <testcase classname='mtestTests.EvenTests' name='testEven15' time='0.009'/>
+    <testcase classname='mtestTests.EvenTests' name='testEven3' time='0.001'/>
+    <testcase classname='mtestTests.EvenTests' name='testEven4' time='0.001'/>
+    <testcase classname='mtestTests.EvenTests' name='testEven5' time='0.001'/>
+  </testsuite>
+</testsuites>

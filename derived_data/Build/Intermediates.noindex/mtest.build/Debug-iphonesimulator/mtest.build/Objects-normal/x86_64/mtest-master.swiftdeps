@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)"
+options: "59aa6682992e414207ed2fbe4c7affb2278a02cc81f0523f3dfc89929b1b885b"
+build_start_time: [1661810737, 192145824]
+build_end_time: [1661810737, 457881927]
+inputs:
+  "/Users/tony/tmp/mtest/mtest/AppDelegate.swift": [1661721721, 112624406]
+  "/Users/tony/tmp/mtest/mtest/SceneDelegate.swift": [1661721721, 114321231]
+  "/Users/tony/tmp/mtest/mtest/ViewController.swift": [1661724534, 863757371]
+  "/Users/tony/tmp/mtest/mtest/algos/Even.swift": [1661727976, 92688560]
+  "/Users/tony/tmp/mtest/mtest/algos/Fizz.swift": [1661727976, 106705188]
+  "/Users/tony/tmp/mtest/mtest/algos/Prime.swift": [1661727976, 81372022]

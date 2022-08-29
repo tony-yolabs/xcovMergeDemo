@@ -1,0 +1,13 @@
+Target dependency graph (6 targets)
+Pods-mtest in Pods, no dependencies
+mtest in mtest, depends on:
+Pods-mtest in Pods (implicit dependency via file 'Pods_mtest.framework' in build phase 'Link Binary')
+Pods-mtestTests in Pods, depends on:
+Pods-mtest in Pods (explicit)
+mtestTests in mtest, depends on:
+mtest in mtest (explicit)
+Pods-mtestTests in Pods (implicit dependency via file 'Pods_mtestTests.framework' in build phase 'Link Binary')
+Pods-mtest-mtestUITests in Pods, no dependencies
+mtestUITests in mtest, depends on:
+mtest in mtest (explicit)
+Pods-mtest-mtestUITests in Pods (implicit dependency via file 'Pods_mtest_mtestUITests.framework' in build phase 'Link Binary')

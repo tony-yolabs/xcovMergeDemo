@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>0987EC30-5222-4950-9878-4B5E5B776509</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>0987EC30-5222-4950-9878-4B5E5B776509.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>mtest project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>EvenTests</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Cleaning workspace mtest with scheme EvenTests</string>
+			<key>timeStartedRecording</key>
+			<real>683503536.23970997</real>
+			<key>timeStoppedRecording</key>
+			<real>683503536.35444903</real>
+			<key>title</key>
+			<string>Cleaning workspace mtest with scheme EvenTests</string>
+			<key>uniqueIdentifier</key>
+			<string>0987EC30-5222-4950-9878-4B5E5B776509</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

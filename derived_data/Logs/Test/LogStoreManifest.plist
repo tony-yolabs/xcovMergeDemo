@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>7E2C17ED-5108-4198-9DE6-F8CD451B35BE</key>
+		<dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.unit.cocoaUnitTest</string>
+			<key>fileName</key>
+			<string>Test-EvenTests-2022.08.29_15-05-42--0700.xcresult</string>
+			<key>hasCoverageData</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>mtest project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>EvenTests</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Test EvenTests</string>
+			<key>timeStartedRecording</key>
+			<real>683503542.86880803</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Test EvenTests</string>
+			<key>uniqueIdentifier</key>
+			<string>7E2C17ED-5108-4198-9DE6-F8CD451B35BE</string>
+		</dict>
+		<key>B027501A-D9D4-424A-B3ED-C21643229C3B</key>
+		<dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.unit.cocoaUnitTest</string>
+			<key>fileName</key>
+			<string>Test-PrimeTests-2022.08.29_15-05-30--0700.xcresult</string>
+			<key>hasCoverageData</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>mtest project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>PrimeTests</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Test PrimeTests</string>
+			<key>timeStartedRecording</key>
+			<real>683503530.44126701</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Test PrimeTests</string>
+			<key>uniqueIdentifier</key>
+			<string>B027501A-D9D4-424A-B3ED-C21643229C3B</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
