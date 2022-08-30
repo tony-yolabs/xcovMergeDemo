@@ -1,21 +1,38 @@
 require "fileutils"
 
-DERIVED_DATA_PATH = './derived_data'.freeze
-XCOV_OUTPUT_PATH = './fastlane/xcov_output'.freeze
-XCOV_MERGED_PATH = 'xcov_output'.freeze
-XCOV_TEMP_LOG_PATH = '/xcov_temp_logs'.freeze
+DERIVED_DATA_PATH = 'derived_data'.freeze
+XCOV_FULL_OUTPUT_PATH = 'fastlane/xcov_output'.freeze
+XCOV_OUTPUT_PATH = 'xcov_output'.freeze
+XCOV_TEMP_LOG_PATH = 'xcov_temp_logs'.freeze
 TEST_SCHEMES = ['FizzTests', 'PrimeTests', 'EvenTests'].freeze
+ALL_TEST_SCHEME = 'AllTests'.freeze
 
 default_platform(:ios)
 
 platform :ios do
   lane :do_tests do |options|
-    TEST_SCHEMES.each do |test_scheme|
-      prebuild(test_scheme)
+    preclean
+    prebuild(ALL_TEST_SCHEME)
+    
+    TEST_SCHEMES.each do |test_scheme|      
       test_with_prebuild(test_scheme)
     end
 
     merge_results
+  end
+
+  def preclean
+    dd_path = File.join(File.dirname(Dir.pwd), DERIVED_DATA_PATH)
+    puts(dd_path)
+    FileUtils.rm_rf(dd_path) if File.exist?(dd_path)
+
+    xco_path = File.join(Dir.pwd, XCOV_OUTPUT_PATH)
+    puts(xco_path)
+    FileUtils.rm_rf(xco_path) if File.exist?(xco_path)
+
+    xctemp_path = File.join(Dir.pwd, XCOV_TEMP_LOG_PATH)
+    puts(xctemp_path)
+    FileUtils.rm_rf(xctemp_path) if File.exist?(xctemp_path)
   end
 
   def merge_results
@@ -28,8 +45,11 @@ platform :ios do
       return
     end
 
-    merged_report = File.join(XCOV_MERGED_PATH, 'merged.xcresult')
-    cmd_line = "xcrun xcresulttool merge #{xcresult_list} --output-path #{merged_report}" 
+    relative_merged_report = File.join(XCOV_OUTPUT_PATH, 'merged.xcresult')
+    absolute_merged_report = File.join(Dir.pwd, relative_merged_report)
+
+    FileUtils.rm_rf(absolute_merged_report) if File.exist?(absolute_merged_report)
+    cmd_line = "xcrun xcresulttool merge #{xcresult_list} --output-path #{relative_merged_report}" 
     puts "Running: sh #{cmd_line}"
     sh cmd_line
   end
@@ -53,7 +73,7 @@ platform :ios do
        devices: ["iPhone 11"],
        code_coverage: true,
        derived_data_path: DERIVED_DATA_PATH,
-       output_directory: XCOV_OUTPUT_PATH,
+       output_directory: XCOV_FULL_OUTPUT_PATH,
        test_without_building: true
     )
 
